@@ -55,8 +55,7 @@ class DetailActivity : AppCompatActivity() {
         val username: String = user?.login ?: favoriteUser?.username.toString()
 
         val viewModelFactory = ViewModelFactory(this@DetailActivity.application, username, pref)
-        detailViewModel =
-            ViewModelProvider(this@DetailActivity, viewModelFactory)[DetailViewModel::class.java]
+        detailViewModel = ViewModelProvider(this@DetailActivity, viewModelFactory)[DetailViewModel::class.java]
 
         val sectionPagerAdapter = SectionPagerAdapter(this, username)
         val viewPager: ViewPager2 = binding.viewPager
